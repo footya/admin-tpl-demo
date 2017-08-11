@@ -1,25 +1,26 @@
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
 import React, {Component} from 'react';
-import {createStor} from 'redux';
-import {Provider, connect} from 'react-redux';
-// react-router v4
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-// 引入所有reducer
-import initStore from './store';
-import Home from './home/index';
 
+// 模块热加载
+import {AppContainer} from 'react-hot-loader';
 
-render(
-    <Provider store={initStore}>
-        <Router>
-            <div className="main">
-                <ul>
-                    <li><Link to="/">home</Link></li>
-                </ul>
-                <Route path="/home" component={Home}/>
-            </div>
-        </Router>
-    </Provider>,
-    document.getElementById('root')
-);
+import Routes from './routes';
+const render = (Components)=>{
+    ReactDOM.render(
+        <AppContainer>
+            <Components />
+        </AppContainer>,
+        document.getElementById('root')
+    );
+};
 
+render(Routes);
+if (module.hot) {
+    // 需要热加载的模块必须是个独立文件
+    module.hot.accept('./routes', ()=>{
+        console.log('----1-');
+        // 这个地方必须重新require一次，否则不能更新
+        const nextRoutes = require('./routes').default;
+        render(Routes);
+    });
+}

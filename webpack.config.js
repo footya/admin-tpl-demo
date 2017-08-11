@@ -5,10 +5,15 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 const NODE_ENV = JSON.stringify(process.env.NODE_ENV || 'development');
 export default {
     devtool: 'cheap-module-source-map',
-    entry: [
-        'webpack-hot-middleware/client?reload=true',
-        path.join(__dirname, 'src', 'index.jsx')
-    ],
+    entry: {
+        'index': [
+            'react-hot-loader/patch',
+            // 加上reload=true以后可以使得不是hmr的模块reload
+            'webpack-hot-middleware/client?reload=true',
+            // 'webpack-hot-middleware/client?http://localhost:3000',
+            path.join(__dirname, 'src', 'index.jsx')
+        ]
+    },
     output: {
         path: path.join(__dirname, 'dest'),
         filename: 'bundle.js',

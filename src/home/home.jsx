@@ -9,7 +9,7 @@ class Home extends Component {
     render() {
         return (
 	       	<div className="page-home">
-	            111{this.props.pageName}
+	           {this.props.pageName}
 	        </div>
         );
     }
