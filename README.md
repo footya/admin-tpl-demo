@@ -55,6 +55,25 @@
     }
     ```
 
+## 添加Postcss
+
+- webpack.config.js 添加postcss-loader
+    ```
+    {
+        test: /\.s?css$/,
+        loaders: ['style-loader', 'css-loader', 'postcss-loader']
+    }
+    ```
+- 增加postcss.config.js
+    ```
+    module.exports = {
+        plugins: [
+            require('precss'),
+            require('autoprefixer'),
+        ]
+    }
+    ```
+
 ## 扩展阅读
 
 - [html-webpack-plugin用法全解](https://segmentfault.com/a/1190000007294861)
@@ -65,3 +84,4 @@
 - [模块热替换(HMR)的几种方式](https://segmentfault.com/a/1190000009244530)
 - [an design 脚手架市场](http://scaffold.ant.design/)
 - [browser-sync-webpack-plugin](https://github.com/Va1/browser-sync-webpack-plugin)
+- [postcss](https://github.com/postcss/postcss)
