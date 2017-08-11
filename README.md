@@ -23,7 +23,7 @@
         lazy: false,
         historyApiFallback: true
     }));
-```
+    ```
 - 改造入口模块
 
     ```
