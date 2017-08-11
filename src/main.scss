@@ -1,0 +1,16 @@
+.main {
+	.left-cont {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 200px;
+		height: 100%;
+		background: #000;
+	}
+	.right-cont {
+		margin-left: 200px;
+		background: #eee;
+		height: auto;
+		overflow: auto;
+	}
+}

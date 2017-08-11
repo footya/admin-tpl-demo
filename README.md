@@ -63,3 +63,5 @@
 - [ReactRouter-V4 构建之道与源码分析](https://zhuanlan.zhihu.com/p/25696969)
 - [hot-module-replacement](https://github.com/webpack/docs/wiki/hot-module-replacement)
 - [模块热替换(HMR)的几种方式](https://segmentfault.com/a/1190000009244530)
+- [an design 脚手架市场](http://scaffold.ant.design/)
+- [browser-sync-webpack-plugin](https://github.com/Va1/browser-sync-webpack-plugin)

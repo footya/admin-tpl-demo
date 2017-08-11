@@ -40,7 +40,7 @@ export default {
             exclude: /node_modules/
         }, {
             test: /\.s?css$/,
-            loaders: ['style-loader', 'css-loader']
+            loaders: ['style-loader', 'css-loader', 'postcss-loader']
         }]
     },
     resolve: {
