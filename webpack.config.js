@@ -41,6 +41,10 @@ export default {
         }, {
             test: /\.s?css$/,
             loaders: ['style-loader', 'css-loader', 'postcss-loader']
+        }, { // https://www.npmjs.com/package/babel-plugin-import
+            test: /\.less$/,
+            loaders: ['style-loader', 'css-loader', 'postcss-loader'],
+            exclude: /node_modules/
         }]
     },
     resolve: {
